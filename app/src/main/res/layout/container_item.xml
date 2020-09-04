@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.cos.review.adapter.ImageBindingAdapter"/>
+        <variable
+            name="product"
+            type="com.cos.review.model.Product" />
+    </data>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="120dp">
+
+    <ImageView
+        android:id="@+id/iv_thumnail"
+        android:layout_alignParentLeft="true"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="15dp"
+        android:scaleType="centerCrop"
+        app:thumnail="@{product.thumnail}"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginRight="15dp"
+        android:layout_toRightOf="@+id/iv_thumnail">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingTop="20dp"
+            android:paddingLeft="15dp"
+            android:textSize="15sp"
+            android:text="@{product.title}"/>
+
+        <TextView
+            android:id="@+id/tv_create_date"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingBottom="20dp"
+            android:textSize="15sp"
+            android:text="@{product.day}"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@+id/iv_thumnail"
+        android:background="#656565"/>
+
+</RelativeLayout>
+</layout>
